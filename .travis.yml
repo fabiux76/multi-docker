@@ -13,3 +13,10 @@ after_success:
   - docker build -t fabioadani/multi-nginx ./ngnix
   - docker build -t fabioadani/multi-server ./server
   - docker build -t fabioadani/multi-worker ./worker
+  #Log in to docker CLI
+  - echo "$DOCKER_PWD" | docker login -u "$DOCKER_ID" --password-stdin
+  #push images to docker hub
+  - docker push fabioadani/multi-client
+  - docker push fabioadani/multi-nginx
+  - docker push fabioadani/multi-server
+  - docker push fabioadani/multi-worker
