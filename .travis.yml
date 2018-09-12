@@ -10,7 +10,7 @@ script:
 
 after_success:
   - docker build -t fabioadani/multi-client ./client
-  - docker build -t fabioadani/multi-nginx ./ngnix
+  - docker build -t fabioadani/multi-nginx ./nginx
   - docker build -t fabioadani/multi-server ./server
   - docker build -t fabioadani/multi-worker ./worker
   #Log in to docker CLI
